@@ -10,9 +10,7 @@ def softmax(x):
     x = np.array(x, dtype=np.float64)
     if x.ndim == 1:
         x = x - np.max(x)
-        return (np.exp(x)) / np.sum(np.exp(x))
+        return np.exp(x) / np.sum(np.exp(x))
     else:
         x = x - np.max(x, axis=1, keepdims=True)
         return np.exp(x) / np.sum(np.exp(x), axis=1, keepdims=True)
-        
-    
