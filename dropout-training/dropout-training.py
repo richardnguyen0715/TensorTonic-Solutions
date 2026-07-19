@@ -18,9 +18,10 @@ def dropout(x, p=0.5, rng=None):
     mask = (random > p).astype(np.float64)
 
     scale = 1 / (1 - p)
+    scale = mask * scale
 
-    output = x * mask / ( 1 - p )
+    output = x * scale
 
-    return output, mask / (1 - p)
+    return output, scale
 
     
