@@ -12,19 +12,25 @@ def _as2d(a, feat):
     return a, False
 
 def gru_cell_forward(x, h_prev, params):
-    """
-    Implement the GRU forward pass for one time step.
-    Supports shapes (D,) & (H,) or (N,D) & (N,H).
-    """
-    # Write code here
 
+    x, x_was_1d = _as2d(x, params["Wz"].shape[0])
+    h_prev, h_was_1d = _as2d(h_prev, params["Uz"].shape[0])
 
     z_t = _sigmoid(x @ params['Wz'] + h_prev @ params['Uz'] + params['bz'])
 
     r_t = _sigmoid(x @ params['Wr'] + h_prev @ params['Ur'] + params['br'])
 
-    h_hat_t = np.tanh(x @ params['Wh'] + (r_t * h_prev) @ params['Uh'] + params['bh'])
+    h_hat_t = np.tanh(
+        x @ params['Wh']
+        + (r_t * h_prev) @ params['Uh']
+        + params['bh']
+    )
 
-    return (1 - z_t) * h_prev + z_t * h_hat_t
+    h = (1 - z_t) * h_prev + z_t * h_hat_t
+
+    if x_was_1d:          # hoặc h_was_1d
+        h = h.squeeze(0)
+
+    return h
 
     
