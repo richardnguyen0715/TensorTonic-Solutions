@@ -24,4 +24,4 @@ def triplet_loss(anchor, positive, negative, margin=1.0):
 
     print(losses)
 
-    return np.mean(losses)
+    return float(np.mean(losses))
