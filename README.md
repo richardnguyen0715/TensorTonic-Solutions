@@ -27,6 +27,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Autocorrelation | Compute normalized time-series autocorrelation across a requested range of lags, including constant-series handling. | https://www.tensortonic.com/problems/autocorrelation |
 | Bag-of-Words Vector | Build a NumPy bag-of-words count vector from an ordered vocabulary while ignoring out-of-vocabulary tokens. | https://www.tensortonic.com/problems/bag-of-words |
 | Baseline Predictor | Predict collaborative-filtering ratings from the global mean plus user and item rating biases. | https://www.tensortonic.com/problems/baseline-predictor |
+| Batch Shuffling & Mini-Batch Generator | Create shuffled mini-batches from NumPy feature and target arrays with reproducible ordering and final-batch handling. | https://www.tensortonic.com/problems/batch-generator |
 | Bilinear Interpolation | Resize a 2D image with bilinear interpolation by combining the four neighboring pixel values at each output coordinate. | https://www.tensortonic.com/problems/bilinear-interpolation |
 | Binary Focal Loss | Compute binary focal loss from predicted probabilities with class balancing, focusing strength, and stable logarithms. | https://www.tensortonic.com/problems/binary-focal-loss |
 | Implement BM25 Ranking Score | Implement BM25 document ranking with term frequency saturation, inverse document frequency, and length normalization. | https://www.tensortonic.com/problems/bm25 |
